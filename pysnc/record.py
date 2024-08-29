@@ -876,6 +876,10 @@ class GlideRecord(object):
         :param str second_value: optional, if specified then ``value`` is expected to be an operator
         """
         return self.__query.add_query(name, value, second_value)
+    
+    @property
+    def query_string(self) -> str:
+        return self.__query.query_string
 
     def add_join_query(self, join_table, primary_field=None, join_table_field=None) -> JoinQuery:
         """
