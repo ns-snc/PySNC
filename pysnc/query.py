@@ -34,7 +34,7 @@ class QueryCondition(BaseCondition):
         return sub_query
 
     def generate(self) -> str:
-        self._value = self._value.replace(' ', '%20')
+        # self._value = self._value.replace(' ', '%20')
         query = "{}{}{}".format(self._name, self._operator, self._value)
         for sub_query in self.__sub_query:
             query = '^'.join((query, sub_query.generate()))
