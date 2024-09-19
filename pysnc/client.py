@@ -210,6 +210,7 @@ class TableAPI(API):
         params = self._set_params(record)
         target_url = self._target(record.table)
 
+        # print(params)
         req = requests.Request('GET', target_url, params=params)
         return self._send(req)
 
