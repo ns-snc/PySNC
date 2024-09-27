@@ -879,7 +879,7 @@ class GlideRecord(object):
     
     @property
     def query_string(self) -> str:
-        return self.__query.query_string
+        return self.__query.query_string + (('^' + self.__encoded_query) if self.__encoded_query is not None else '')
 
     def add_join_query(self, join_table, primary_field=None, join_table_field=None) -> JoinQuery:
         """
